@@ -15,7 +15,8 @@ export default class Login extends React.Component {
   onLogin = async () => {
       const { user, password } = this.state
       try {
-        if (user.length > 0 && password.length > 0) {
+        if (user.length >= 0 && password.length >= 0) {
+          
           this.props.navigation.navigate('App')
         }
       } catch (error) {
@@ -24,7 +25,7 @@ export default class Login extends React.Component {
   }    
   render() {
     const { user, password } = this.state
-
+    //this.props.navigation.navigate('App')
     return (
       <View style={styles.container}>
           <Text style={styles.logo}>FACE SECURITY</Text>
@@ -74,14 +75,14 @@ const styles = StyleSheet.create({
     width:"80%",
     backgroundColor:"#fbfbfb",
     borderRadius:25,
-    height:50,
-    marginBottom:20,
+    height:"5%",
+    marginBottom:"4%",
     justifyContent:"center",
-    padding:20
+    padding:"3%"
   },
   inputText:{
-    height:50,
-    color:"black"
+    color:"black",
+    padding:"3%"
   },
   loginBtn:{
     width:"80%",

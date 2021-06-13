@@ -124,6 +124,10 @@ export default class AddUser extends React.Component {
             </TouchableOpacity>
           <TouchableOpacity style={styles.btn}
               onPress={this.addUser}>
+              <Text style={styles.btnText}>Delete User</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}
+              onPress={this.addUser}>
               <Text style={styles.btnText}>Add User</Text>
           </TouchableOpacity>
         </View> 
@@ -145,7 +149,7 @@ const styles = StyleSheet.create({
     paddingHorizontal:"5%"
   },
   imageView:{
-    marginLeft:"15%",
+    marginLeft:"5%",
     width: "30%", 
     height: "20%" 
   },
