@@ -21,7 +21,7 @@ for rule in app.url_map.iter_rules():
 
 @app.route("/api")
 def hello():
-    return "Hello world from flask!"
+    return "Cloud platform to the embedded project!"
 
 
 def run_api_server():
