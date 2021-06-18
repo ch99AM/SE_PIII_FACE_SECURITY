@@ -5,6 +5,7 @@ from routes.area import area_routes
 from routes.login import login_routes
 from routes.system import system_routes
 from routes.user import user_routes
+import models.db_context as db_context
 
 app = Flask(__name__)
 
@@ -16,8 +17,13 @@ app.register_blueprint(login_routes, url_prefix='/api/login')
 app.register_blueprint(system_routes, url_prefix='/api/system')
 app.register_blueprint(user_routes, url_prefix='/api/user')
 
-for rule in app.url_map.iter_rules():
-    print(rule)
+# DB settings
+app.config['MONGODB_SETTINGS'] = {
+    'db': 'face_security_db',
+    'host': 'localhost',
+    'port': 27017
+}
+
 
 @app.route("/api")
 def hello():
@@ -25,4 +31,5 @@ def hello():
 
 
 def run_api_server():
+    db_context.init_db_context(app)
     app.run(host='127.0.0.1', port=3435)
