@@ -12,10 +12,31 @@ def get_user():
     return answer
 
 
+@user_routes.route("/getAdmin", methods=["GET"])
+def get_admin():
+    body = request.json
+    answer = user_controller.get_admin(body)
+    return answer
+
+
+@user_routes.route("/getConsultant", methods=["GET"])
+def get_consultant():
+    body = request.json
+    answer = user_controller.get_consultant(body)
+    return answer
+
+
 @user_routes.route("/getPhoto", methods=["GET"])
 def get_user_photo():
     body = request.json
     answer = user_controller.get_user_photo(body)
+    return answer
+
+
+@user_routes.route("/getAllUsers", methods=["GET"])
+def get_all_users():
+    body = request.json
+    answer = user_controller.get_all_users()
     return answer
 
 
@@ -26,6 +47,20 @@ def add_user():
     return answer
 
 
+@user_routes.route("/addAdmin", methods=["POST"])
+def add_admin():
+    body = request.json
+    answer = user_controller.add_admin(body)
+    return answer
+
+
+@user_routes.route("/addConsultant", methods=["POST"])
+def add_consultant():
+    body = request.json
+    answer = user_controller.add_consultant(body)
+    return answer
+
+
 @user_routes.route("/update", methods=["PUT"])
 def update_user():
     body = request.json
@@ -33,8 +68,36 @@ def update_user():
     return answer
 
 
+@user_routes.route("/updateAdmin", methods=["PUT"])
+def update_admin():
+    body = request.json
+    answer = user_controller.update_admin(body)
+    return answer
+
+
+@user_routes.route("/updateConsulant", methods=["PUT"])
+def update_consultant():
+    body = request.json
+    answer = user_controller.update_consultant(body)
+    return answer
+
+
 @user_routes.route("/delete", methods=["DELETE"])
 def delete_user():
     body = request.json
     answer = user_controller.delete_user(body)
+    return answer
+
+
+@user_routes.route("/deleteAdmin", methods=["DELETE"])
+def delete_admin():
+    body = request.json
+    answer = user_controller.delete_admin(body)
+    return answer
+
+
+@user_routes.route("/deleteConsultant", methods=["DELETE"])
+def delete_consultant():
+    body = request.json
+    answer = user_controller.delete_consultant(body)
     return answer

@@ -9,11 +9,11 @@ request_routes = Blueprint("request_routes", __name__)
 def get_by_user():
     body = request.json
     answer = request_controller.get_by_user(body)
-    return "Get Users!"
+    return answer
 
 
 @request_routes.route("/byArea", methods=["GET"])
 def get_by_area():
     body = request.json
     answer = request_controller.get_by_area(body)
-    return "Get Areas!"
+    return answer
