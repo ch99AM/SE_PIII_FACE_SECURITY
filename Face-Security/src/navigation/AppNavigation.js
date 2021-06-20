@@ -1,26 +1,30 @@
 
-import * as React from 'react';
-import { Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import AddUser from '../screens/AddUser'
-import EditUser from '../screens/EditUser'
-import Queries from '../screens/Queries'
+import * as React from 'react'
+import { NavigationContainer} from '@react-navigation/native'
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs'
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+
+
+import AddUserStack from './AddUserNavigation';
+import EditUserStack from './EditUserNavigation';
+import QueriesStack from './QueriesNavigation';
 
 const Tab = createMaterialBottomTabNavigator();
+
 
 function MyTabs() {
   return (
     <Tab.Navigator
       initialRouteName="AddUser"
+      backBehavior="none"
       activeColor="#f08241"
       barStyle={{ backgroundColor: '#465881' }}
+      title="Face Security"
     >
       <Tab.Screen
         name="AddUser"
-        component={AddUser}
+        component={AddUserStack}
         options={{
           tabBarLabel: 'AddUser',
           tabBarIcon: ({ color }) => (
@@ -30,7 +34,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="EditUser"
-        component={EditUser}
+        component={EditUserStack}
         options={{
           tabBarLabel: 'EditUser',
           tabBarIcon: ({ color }) => (
@@ -40,7 +44,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Queries"
-        component={Queries}
+        component={QueriesStack}
         options={{
           tabBarLabel: 'Queries',
           tabBarIcon: ({ color }) => (
@@ -52,10 +56,15 @@ function MyTabs() {
   );
 }
 
-export default function App() {
+export default function AppNavigator() {
   return (
     <NavigationContainer>
       <MyTabs />
-    </NavigationContainer>
+    </NavigationContainer>          
   );
 }
+
+
+
+
+
