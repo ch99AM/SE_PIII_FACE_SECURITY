@@ -26,7 +26,7 @@ export default class EditUser extends React.Component {
 
   makeRemoteRequest = () => {
     const { page, seed } = this.state
-    const url = 'https://randomuser.me/api/?seed=${'+seed+'}&page=${'+page+'}&results=20'
+    const url = 'https://randomuser.me/api/?seed=${'+seed+'}&page=${'+page+'}&results=50'
     this.setState({ loading: true })
 
     fetch(url)
@@ -82,7 +82,7 @@ export default class EditUser extends React.Component {
     )
   }
   userInfo = () => {
-    this.props.navigation.navigate('EditInfoUser')
+    this.props.navigation.navigate("EditInfoUser")
   }
   render() {
     return (
@@ -90,19 +90,17 @@ export default class EditUser extends React.Component {
         style={styles.container}>
         <FlatList
           data={this.state.data}
+          keyExtractor={item => item.email}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={this.userInfo}>
-              <View
-                style={styles.touchableView}>
-                <Text
-                  category='s1'
-                  style={{color: '#000'}}>
-                  {`${item.name.first} ${item.name.last}`}
-                </Text>
-              </View>
+            <TouchableOpacity onPress={this.userInfo}
+              style={styles.touchableView}>
+              <Text
+                category='s1'
+                style={{color: '#000'}}>
+                {`${item.name.first} ${item.name.last}`}
+              </Text>
             </TouchableOpacity>
           )}
-          keyExtractor={item => item.email}
           ItemSeparatorComponent={this.renderSeparator}
           ListHeaderComponent={this.renderHeader}
         />
@@ -114,16 +112,16 @@ export default class EditUser extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-    marginTop: 40
+    paddingHorizontal: '5%',
+    paddingVertical: '1%',
+    marginTop: '8%'
   },
   searchView:{
     backgroundColor: '#fff',
     padding: 10,
-    alignItems: 'center',
     justifyContent: 'center',
-    width:'50%'
+    width:'80%',
+    height:40
   },
   searchText:{
     borderColor: '#333',
@@ -133,12 +131,13 @@ const styles = StyleSheet.create({
   seperatorView:{
     height: 1,
     width: '86%',
-    backgroundColor: '#CED0CE',
-    marginLeft: '5%'
+    backgroundColor: '#f08241',
+    marginLeft: '2%'
   },
   touchableView:{
     flexDirection: 'row',
-    padding: 16,
+    paddingVertical: '4%',
+    paddingHorizontal:'2%',
     alignItems: 'center'
   }
 

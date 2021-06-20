@@ -4,7 +4,7 @@ import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Queries from '../screens/Queries'
-import QueryDate from '../screens/QueryDate'
+import QueryArea from '../screens/QueryArea'
 
 const SettingsStack = createStackNavigator();
 
@@ -26,9 +26,9 @@ export default function EditUserStack() {
       }}/>
       <SettingsStack.Screen 
         name="QueryByDate" 
-        component={QueryDate} 
+        component={QueryArea} 
         options={{
-          title: 'Query by date',
+          title: 'Query Area',
           headerStyle: {
             backgroundColor: '#465881',
           },

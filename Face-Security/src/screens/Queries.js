@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     paddingTop:"10%",
+    alignItems:'center',
     justifyContent:"space-evenly"
   },
   btnView:{
@@ -45,14 +46,14 @@ const styles = StyleSheet.create({
     justifyContent:"space-evenly",
     width:"100%",
     height:"10%"
-    
   },
   btn:{
-    width:"98%",
+    width:"80%",
     height:"8%",
     backgroundColor:"#f08241",
     borderRadius:10,
     justifyContent:"center",
+    alignItems:'center',
     marginStart:"1%"
   },
   btnText:{

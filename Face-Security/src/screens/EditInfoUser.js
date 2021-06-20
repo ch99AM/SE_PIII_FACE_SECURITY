@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView, Button} from 'react-native'
 import * as ImagePicker from 'expo-image-picker';
 
-export default class AddUser extends React.Component {
+export default class EditInfoUser extends React.Component {
   state = {
     name: '',
     lastName: '',
@@ -114,8 +114,8 @@ export default class AddUser extends React.Component {
         </View>
         <Text style={styles.textView}>Profile Photo</Text>
        
-         <Image source={{ uri: (photo==null? require('../../assets/default_user.png'):photo.uri)}} 
-            style={styles.imageView} />
+        {photo &&<Image source={{ uri: photo.uri}} 
+            style={styles.imageView} />}
 
         <View style={styles.btnView}>
           <TouchableOpacity style={styles.btn}

@@ -6,26 +6,58 @@ export default class AddUser extends React.Component {
   state = {
     name: '',
     lastName: '',
-    SecondLastName: '',
+    secondLastName: '',
     numID: '',
-    userType: '',
+    password: '',
     photo: null,
     accessAreas:''
   }
+  addUser = async () => {
+    const {name, lastName, secondLastName, numID,
+      password, photo, accessAreas}=this.state
+    try {
+      if (name.length >= 0 && lastName.length >=0
+        && secondLastName.length >= 0 && numID.length >=0
+        && password.length >= 0 && photo == null) {
+        await fetch('https://reactnative.dev/movies.json', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json',
+                    'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            "userName" : name,
+            "userFirstLastName" : lastName,
+            "userSecLastName": secondLastName,
+            "idCard" : numID,
+            "password" : password,
+            "photo": photo
+          })
+        })
+        .then( async (respond) => await respond.json())
+        .then( async (respondJson) => {
+          alert(respondJson);
+          if (respondJson.allowed == false){
+            alert("Invalid User")
+          }
+        })
+      }
+    }catch (error) {
+      alert(error)
+    }
+  }    
   handleNameChange = name =>{
     this.setState({name})
   }
   handleLastNameChange = lastName =>{
     this.setState({lastName})
   }
-  handleSecondLastNameChange = SecondLastName =>{
-    this.setState({SecondLastName})
+  handleSecondLastNameChange = secondLastName =>{
+    this.setState({secondLastName})
   }
   handlenumIDChange = numID =>{
     this.setState({numID})
   }
-  handleUserTypeChange = userType =>{
-    this.setState({userType})
+  handleUserTypeChange = password =>{
+    this.setState({password})
   }
   handlePhotoChange = photo =>{
     this.setState({photo})
@@ -45,16 +77,9 @@ export default class AddUser extends React.Component {
       this.setState({photo: result});
     }
   }
-  addUser = async () => {
-    try {
-      alert("Hola")
-    } catch (error) {
-      alert(error)
-    }
-  } 
   render() {
     const {name, lastName, secondLastName, numID,
-      userType, photo, accessAreas}=this.state
+      password, photo, accessAreas}=this.state
       
     return (
       <ScrollView style={styles.container}>
@@ -94,11 +119,11 @@ export default class AddUser extends React.Component {
             onChangeText={this.handlenumIDChange}
           />
         </View>
-        <Text style={styles.textView}>User Type</Text>
+        <Text style={styles.textView}>Password</Text>
         <View style={styles.inputView}>
           <TextInput
-            style={styles.inputText} name='userType' 
-            value={userType} placeholder='user type'
+            style={styles.inputText} name='password' 
+            value={password} placeholder='password'
             autoCapitalize='none' 
             onChangeText={this.handleUserTypeChange}
           />
@@ -114,8 +139,8 @@ export default class AddUser extends React.Component {
         </View>
         <Text style={styles.textView}>Profile Photo</Text>
        
-         <Image source={{ uri: (photo==null? require('../../assets/default_user.png'):photo.uri)}} 
-            style={styles.imageView} />
+        {photo &&<Image source={{ uri: photo.uri}} 
+            style={styles.imageView} />}
 
         <View style={styles.btnView}>
           <TouchableOpacity style={styles.btn}
