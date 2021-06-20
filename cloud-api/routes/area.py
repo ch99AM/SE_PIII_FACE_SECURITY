@@ -16,25 +16,25 @@ def get_area():
 def get_all_areas():
     body = request.json
     answer = area_controller.get_all_areas(body)
-    return "GetAllAreas"
+    return answer
 
 
 @area_routes.route("/add", methods=["POST"])
 def add_area():
     body = request.json
     answer = area_controller.add_area(body)
-    return "AddArea"
+    return answer
 
 
 @area_routes.route("/update", methods=["PUT"])
 def update_area():
     body = request.json
     answer = area_controller.update_area(body)
-    return "updateArea"
+    return answer
 
 
 @area_routes.route("/delete", methods=["DELETE"])
 def delete_area():
     body = request.json
     answer = area_controller.delete_area(body)
-    return "deleteArea"
+    return answer
