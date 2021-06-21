@@ -13,6 +13,12 @@ def get_all_users():
     return users
 
 
+def get_user_by_mongo_id(mongo_id):
+    user = User.objects.get_or_404(id=mongo_id)
+
+    return user
+
+
 def get_photo_for_user(card_id):
     user = User.objects.get(cardID=card_id)
     if len(user) == 0:
@@ -37,7 +43,7 @@ def update_one_user(card_id, user):
     return u_user
 
 
-def delete_one(card_id):
+def delete_one_user(card_id):
     d_user = User.objects.get_or_404(cardID=card_id)
     d_user.delete()
 

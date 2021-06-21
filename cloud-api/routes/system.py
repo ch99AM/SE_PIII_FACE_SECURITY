@@ -5,9 +5,11 @@ import controllers.system as system_controller
 system_routes = Blueprint("system_routes", __name__)
 
 
-@system_routes.route("/getSystem", methods=["GET"])
-def get_system():
-    body = request.json
+@system_routes.route("/getSystem/<codeSystem>", methods=["GET"])
+def get_system(codeSystem):
+    body = {
+        "code": codeSystem
+    }
     answer = system_controller.get_system(body)
     return answer
 

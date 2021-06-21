@@ -6,7 +6,7 @@ import controllers.login as login_controller
 login_routes = Blueprint("login_routes", __name__)
 
 
-@login_routes.route("/")
+@login_routes.route("", methods=["POST"])
 def login():
     body = request.json
     answer = login_controller.login(body)

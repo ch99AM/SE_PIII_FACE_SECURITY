@@ -7,6 +7,13 @@ def get_one_area(code_area):
 
     return area
 
+
+def get_area_by_mongo_id(mongo_id):
+    area = Area.objects.get_or_404(id=mongo_id)
+
+    return area
+
+
 def get_all_areas():
     areas = Area.objects()
 
@@ -16,7 +23,6 @@ def insert_one_area(id_card, area):
     user = get_one_user(id_card)
     if (len(user) == 0):
         return {"error": "user_not_valid"}
-        
     area["user"] = user
 
     try:
