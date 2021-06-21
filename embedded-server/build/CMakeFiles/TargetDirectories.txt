@@ -1,0 +1,17 @@
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/CMakeFiles/install/strip.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/CMakeFiles/install/local.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/CMakeFiles/edit_cache.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/CMakeFiles/package_source.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/CMakeFiles/install.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/CMakeFiles/list_install_components.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/CMakeFiles/rebuild_cache.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/CMakeFiles/package.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/src/CMakeFiles/install/local.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/src/CMakeFiles/edit_cache.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/src/CMakeFiles/package_source.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/src/CMakeFiles/install.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/src/CMakeFiles/list_install_components.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/src/CMakeFiles/rebuild_cache.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/src/CMakeFiles/package.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/src/CMakeFiles/install/strip.dir
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/build/src/CMakeFiles/gpioDriver.dir
