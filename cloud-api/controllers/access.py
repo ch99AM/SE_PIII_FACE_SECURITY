@@ -12,6 +12,7 @@ def get_access(body):
 
 
 def add_access(body):
+    print(type(body), body)
     id_card_user = body["userIdCard"]
     code_area = body["areaCode"]
     access_body = body["access"]

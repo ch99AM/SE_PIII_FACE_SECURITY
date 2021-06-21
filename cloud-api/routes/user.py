@@ -51,6 +51,7 @@ def get_all_users():
 
 
 @user_routes.route("/add", methods=["POST"])
+@cross_origin()
 def add_user():
     body = request.json
     answer = user_controller.add_user(body)
