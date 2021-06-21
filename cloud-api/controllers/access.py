@@ -24,8 +24,11 @@ def add_access(body):
 
 
 def update_out_datetime(body):
-    access_id = body["accessId"]
+    print(body)
+    access_id = str(body["accessId"]).strip()
     access_info = body["access"]
+
+    
 
     answer = access_repo.update_out_datetime(access_id, access_info)
 
