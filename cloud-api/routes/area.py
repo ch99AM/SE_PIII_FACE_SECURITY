@@ -15,7 +15,7 @@ def get_area(codeArea):
 
 
 @area_routes.route("/getAllAreas", methods=["GET"])
-def get_all_areas(userIdCard):
+def get_all_areas():
     answer = area_controller.get_all_areas()
     return answer
 
