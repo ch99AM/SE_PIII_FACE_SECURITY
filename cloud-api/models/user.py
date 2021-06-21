@@ -20,6 +20,5 @@ class User(db_context.Document):
             "firstLastName": self.firstLastName,
             "secondLastName": self.secondLastName,
             "cardID": self.cardID,
-            "image": self.image,
-            "password": self.password
+            "image": self.image
         }

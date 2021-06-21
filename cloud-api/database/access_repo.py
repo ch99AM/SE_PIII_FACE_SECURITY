@@ -48,7 +48,7 @@ def get_records_by_user(id_card, startTime, finishTime):
 
 
 def get_records_by_area(area_code, startTime, finishTime):
-    area = area_code.get_one_area(area_code)
+    area = area_repo.get_one_area(area_code)
     access = Access.objects(Q(area=area)
                             & Q(inDateTime__gte=startTime)
                             & (Q(outDateTime__lte=finishTime) | Q(outDateTime=None)))

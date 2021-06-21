@@ -4,7 +4,7 @@ from database.user_repo import get_one_user
 
 def get_one_admin_user(id_card):
     user = get_one_user(id_card)
-    admin_user = AdminUser.objects.get(user=user)
+    admin_user = AdminUser.objects.get_or_404(user=user)
 
     return admin_user
 

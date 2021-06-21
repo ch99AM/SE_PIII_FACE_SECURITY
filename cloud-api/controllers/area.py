@@ -11,7 +11,7 @@ def get_area(body):
     return jsonify(answer)
 
 
-def get_all_areas(body):
+def get_all_areas():
     answer = area_repo.get_all_areas()
 
     return jsonify(answer)

@@ -12,3 +12,12 @@ class Area(db_context.Document):
 
     def get_id(self):
         return str(self.pk)
+
+    def to_json(self):
+        return {
+            "_id": str(self.pk),
+            "user": self.user.get_id(),
+            "name": self.name,
+            "address": self.address,
+            "code": self.code
+        }

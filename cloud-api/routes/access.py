@@ -5,9 +5,13 @@ import controllers.access as access_controller
 access_routes = Blueprint("access_routes", __name__)
 
 
-@access_routes.route("/getAccess", methods=["GET"])
-def get_access():
-    body = request.json
+@access_routes.route("/getAccess/<int:userIdCard>&<areaCode>", methods=["GET"])
+def get_access(userIdCard, areaCode):
+    body = {
+        "userIdCard": userIdCard,
+        "areaCode": areaCode
+    }
+
     answer = access_controller.get_access(body)
     return answer
 

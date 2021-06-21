@@ -5,30 +5,40 @@ import controllers.user as user_controller
 user_routes = Blueprint("user_routes", __name__)
 
 
-@user_routes.route("/getUser", methods=["GET"])
-def get_user():
-    body = request.json
+@user_routes.route("/getUser/<int:id_card>", methods=["GET"])
+def get_user(id_card):
+    body = {
+        "idCard": id_card
+    }
     answer = user_controller.get_user(body)
     return answer
 
 
-@user_routes.route("/getAdmin", methods=["GET"])
-def get_admin():
-    body = request.json
+@user_routes.route("/getAdmin/<int:id_card>", methods=["GET"])
+def get_admin(id_card):
+    
+    body = {
+        "idCard": id_card
+    }
+
     answer = user_controller.get_admin(body)
     return answer
 
 
-@user_routes.route("/getConsultant", methods=["GET"])
-def get_consultant():
-    body = request.json
+@user_routes.route("/getConsultant/<int:id_card>", methods=["GET"])
+def get_consultant(id_card):
+    body = {
+        "idCard": id_card
+    }
     answer = user_controller.get_consultant(body)
     return answer
 
 
-@user_routes.route("/getPhoto", methods=["GET"])
-def get_user_photo():
-    body = request.json
+@user_routes.route("/getPhoto/<int:id_card>", methods=["GET"])
+def get_user_photo(id_card):
+    body = {
+        "idCard": id_card
+    }
     answer = user_controller.get_user_photo(body)
     return answer
 
