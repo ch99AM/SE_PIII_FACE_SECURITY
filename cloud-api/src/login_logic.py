@@ -11,7 +11,7 @@ def check_user_login(body):
     admin = admin_repo.get_one_admin_user(id_user)
 
     if user.get_id() == admin.user.get_id():
-        if hashlib == hashlib.md5(user.password):
+        if password == user.password:
             return {
                 "token": "token_generated",
                 "validated": True
