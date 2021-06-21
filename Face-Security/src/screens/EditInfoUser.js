@@ -2,62 +2,30 @@ import React from 'react'
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, ScrollView, Button} from 'react-native'
 import * as ImagePicker from 'expo-image-picker';
 
-export default class AddUser extends React.Component {
+export default class EditInfoUser extends React.Component {
   state = {
     name: '',
     lastName: '',
-    secondLastName: '',
+    SecondLastName: '',
     numID: '',
-    password: '',
+    userType: '',
     photo: null,
     accessAreas:''
   }
-  addUser = async () => {
-    const {name, lastName, secondLastName, numID,
-      password, photo, accessAreas}=this.state
-    try {
-      if (name.length >= 0 && lastName.length >=0
-        && secondLastName.length >= 0 && numID.length >=0
-        && password.length >= 0 && photo == null) {
-        await fetch('https://reactnative.dev/movies.json', {
-          method: 'POST',
-          headers: { 'Accept': 'application/json',
-                    'Content-Type': 'application/json'},
-          body: JSON.stringify({
-            "userName" : name,
-            "userFirstLastName" : lastName,
-            "userSecLastName": secondLastName,
-            "idCard" : numID,
-            "password" : password,
-            "photo": photo
-          })
-        })
-        .then( async (respond) => await respond.json())
-        .then( async (respondJson) => {
-          alert(respondJson);
-          if (respondJson.allowed == false){
-            alert("Invalid User")
-          }
-        })
-      }
-    }catch (error) {
-      alert(error)
-    }
-  }    
   handleNameChange = name =>{
     this.setState({name})
   }
   handleLastNameChange = lastName =>{
     this.setState({lastName})
   }
-  handleSecondLastNameChange = secondLastName =>{
-    this.setState({secondLastName})
+  handleSecondLastNameChange = SecondLastName =>{
+    this.setState({SecondLastName})
   }
   handlenumIDChange = numID =>{
     this.setState({numID})
   }
-  handleUserTypeChange = password =>{
-    this.setState({password})
+  handleUserTypeChange = userType =>{
+    this.setState({userType})
   }
   handlePhotoChange = photo =>{
     this.setState({photo})
@@ -77,9 +45,16 @@ export default class AddUser extends React.Component {
       this.setState({photo: result});
     }
   }
+  addUser = async () => {
+    try {
+      alert("Hola")
+    } catch (error) {
+      alert(error)
+    }
+  } 
   render() {
     const {name, lastName, secondLastName, numID,
-      password, photo, accessAreas}=this.state
+      userType, photo, accessAreas}=this.state
       
     return (
       <ScrollView style={styles.container}>
@@ -119,11 +94,11 @@ export default class AddUser extends React.Component {
             onChangeText={this.handlenumIDChange}
           />
         </View>
-        <Text style={styles.textView}>Password</Text>
+        <Text style={styles.textView}>User Type</Text>
         <View style={styles.inputView}>
           <TextInput
-            style={styles.inputText} name='password' 
-            value={password} placeholder='password'
+            style={styles.inputText} name='userType' 
+            value={userType} placeholder='user type'
             autoCapitalize='none' 
             onChangeText={this.handleUserTypeChange}
           />
@@ -149,6 +124,10 @@ export default class AddUser extends React.Component {
             </TouchableOpacity>
           <TouchableOpacity style={styles.btn}
               onPress={this.addUser}>
+              <Text style={styles.btnText}>Delete User</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}
+              onPress={this.addUser}>
               <Text style={styles.btnText}>Add User</Text>
           </TouchableOpacity>
         </View> 
@@ -170,7 +149,7 @@ const styles = StyleSheet.create({
     paddingHorizontal:"5%"
   },
   imageView:{
-    marginLeft:"15%",
+    marginLeft:"5%",
     width: "30%", 
     height: "20%" 
   },

@@ -1,15 +1,17 @@
 //index.js
 import { createAppContainer, createSwitchNavigator } from 'react-navigation'
-import AuthNavigation from './AuthNavigation'
 import AppNavigator from './AppNavigation'
+import Login from '../screens/Login'
+
 
 const SwitchNavigator = createSwitchNavigator(
     {
-        Auth: AuthNavigation,
+        Login: { screen: Login },
         App: AppNavigator
     },
     {
-        initialRouteName: 'Auth'
+        initialRouteName: 'Login',
+        headerMode: 'none'
     }
 )
 
