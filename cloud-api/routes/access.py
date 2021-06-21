@@ -26,5 +26,6 @@ def add_access():
 @access_routes.route("/updateOutDatetime", methods=["PUT"])
 def update_access():
     body = request.json
+    print("Body gotten: {}".format(body))
     answer = access_controller.update_out_datetime(body)
     return answer
