@@ -1,0 +1,1 @@
+arm-linux-gnueabihf-gcc -fPIC   -shared -Wl,-soname,libgpioDriver.so -o ../../src/lib/libgpioDriver.so CMakeFiles/gpioDriver.dir/lib/gpioDriver.c.o 

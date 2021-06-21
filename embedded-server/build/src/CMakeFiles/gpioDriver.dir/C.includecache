@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/src/include/gpioDriver.h
+sys/mman.h
+-
+err.h
+-
+fcntl.h
+-
+unistd.h
+-
+stdio.h
+-
+stdlib.h
+-
+
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/src/lib/gpioDriver.c
+../include/gpioDriver.h
+/home/gsmuga3/Desktop/TEC/2021-i/embebidos-proyecto-3/SE_PIII_face_security/embedded-server/src/include/gpioDriver.h
+
