@@ -1,4 +1,7 @@
 from flask import Flask
+from flask_cors import CORS
+
+
 from routes.request import request_routes
 from routes.access import access_routes
 from routes.area import area_routes
@@ -8,7 +11,7 @@ from routes.user import user_routes
 import models.db_context as db_context
 
 app = Flask(__name__)
-
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 app.register_blueprint(request_routes, url_prefix='/api/request')
 app.register_blueprint(access_routes, url_prefix='/api/access')
